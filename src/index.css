@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.sr-only {
+  display: none;
+}
+
+.App {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.leaflet-container {
+  height: 100%;
+}
