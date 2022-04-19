@@ -1,11 +1,14 @@
+import {nowDate} from "../../Constants";
+
 export const filteredDataOnDate = (state) => {
-  console.log(state)
 
-  const date = state.geoJson.selectedDate
 
-  let result = state.geoJson.storeGeoJson.find((item) => item.date === date)
+   const date = state.geoJson.selectedDate
 
-  console.log(result)
+   let result = date > nowDate ?
+     state.geoJson.storeGeoJson.find((item) => item.date === nowDate) :
+     state.geoJson.storeGeoJson.find((item) => item.date === date)
 
-  return result?.geoJsonData || []
+
+   return result?.geoJsonData || []
 }
