@@ -9,11 +9,11 @@ let initialState = {
 export const geoJsonReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_GEO_JSON:
-      if (state.storeGeoJson.some((item) => item.date === nowDate)) {
+      if (state.storeGeoJson.some((item) => item.date === state.selectedDate)) {
         return {
           ...state,
           storeGeoJson: state.storeGeoJson.map((item) => {
-            if (item.date === nowDate) {
+            if (item.date === state.selectedDate) {
               return {
                 ...item,
                 geoJsonData: {
@@ -31,7 +31,7 @@ export const geoJsonReducer = (state = initialState, action) => {
           storeGeoJson: [
             ...state.storeGeoJson,
             {
-              date: nowDate,
+              date: state.selectedDate,
               geoJsonData: {
                 type: 'FeatureCollection',
                 features: action.payload.geoJsonData.features
