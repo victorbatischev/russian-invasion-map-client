@@ -27,14 +27,25 @@ code {
 .leaflet-container {
   height: 100%;
 }
+
+.leaflet-draw-actions a {
+  background-color: #fff;
+}
+
+.leaflet-draw-actions {
+  padding-right: 2px;
+}
+
 .map {
   width: 70vw;
   height: 75vh;
 }
+
 .leaflet-touch .leaflet-control-layers-toggle {
   width: 30px;
   height: 31px;
 }
+
 .leaflet-retina .leaflet-control-layers-toggle {
   background-size: 20px 20px;
 }
