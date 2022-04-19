@@ -123,7 +123,7 @@ export const Map = () => {
       </LayersControl>
       <FeatureGroup ref={(item) => _onFeatureGroupReady(item)}>
         <EditControl
-          position='topright'
+          position='topleft'
           onEdited={_onEdited}
           onCreated={_onCreated}
           onDeleted={_onDeleted}
