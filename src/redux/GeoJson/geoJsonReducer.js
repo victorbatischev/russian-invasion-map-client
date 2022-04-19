@@ -1,8 +1,8 @@
-import { nowDate } from '../../Constants'
-import { SET_DATE, SET_GEO_JSON } from './geoJsonConsts'
+import { referenceDate} from '../../Constants'
+import { SET_DATE, SET_GEO_JSON} from './geoJsonConsts'
 
 let initialState = {
-  selectedDate: nowDate,
+  selectedDate: referenceDate,
   storeGeoJson: []
 }
 
@@ -46,7 +46,6 @@ export const geoJsonReducer = (state = initialState, action) => {
         ...state,
         selectedDate: action.payload.selectedDate
       }
-
     default:
       return state
   }
