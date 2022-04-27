@@ -1,0 +1,52 @@
+.header{
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  background: #fff;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 0;
+  &__container{
+
+  }
+}
+
+.menu{
+
+  &__list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0 10px;
+    gap: 2.2rem;
+  }
+  &__item{
+    color: #666666;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    cursor: pointer;
+    position: relative;
+
+    span{
+      font-size: 15px;
+      padding: 10px;
+      background: #f9f9f9;
+      border-radius: 10px;
+      font-family: Arial;
+      cursor: pointer;
+      display: block;
+      color: #000;
+      font-weight: 600;
+    }
+
+  }
+  &__calendar{
+    position: absolute;
+    top: 28px;
+    left: 0;
+    z-index: 100;
+  }
+}

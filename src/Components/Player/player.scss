@@ -1,0 +1,13 @@
+.player{
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  width: 75vw;
+  &__control{
+    display: flex;
+    justify-content: space-around;
+  }
+  &__item{
+    width: 37px;
+  }
+}
