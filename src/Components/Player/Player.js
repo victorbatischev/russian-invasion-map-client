@@ -5,7 +5,7 @@ import './player.scss'
 
 export const Player = () => {
 
-   const SliderBar = ({ direction, value, style }) => <div style={{}} />
+   //const SliderBar = ({ direction, value, style }) => <div style={{}} />
    const SliderHandle = ({ direction, value, style }) => <div style={{}} />
 
    return (

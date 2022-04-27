@@ -80,7 +80,7 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="ts.external.directory.path" value="D:\Programm\WebStorm 2020.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
@@ -140,7 +140,7 @@
       <workItem from="1650917519894" duration="409000" />
       <workItem from="1650955276987" duration="15358000" />
       <workItem from="1651042856944" duration="615000" />
-      <workItem from="1651059547569" duration="5779000" />
+      <workItem from="1651059547569" duration="6430000" />
     </task>
     <servers />
   </component>
@@ -173,26 +173,26 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="771" y="295" key="FileChooserDialogImpl/62.0.1858.1080@62.0.1858.1080" timestamp="1651059688343" />
-    <state width="1837" height="221" key="GridCell.Tab.0.bottom" timestamp="1651065461485">
+    <state width="1837" height="221" key="GridCell.Tab.0.bottom" timestamp="1651071557858">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="221" key="GridCell.Tab.0.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1651065461485" />
-    <state width="1837" height="221" key="GridCell.Tab.0.center" timestamp="1651065461485">
+    <state width="1837" height="221" key="GridCell.Tab.0.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1651071557858" />
+    <state width="1837" height="221" key="GridCell.Tab.0.center" timestamp="1651071557858">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="221" key="GridCell.Tab.0.center/62.0.1858.1080@62.0.1858.1080" timestamp="1651065461485" />
-    <state width="1837" height="221" key="GridCell.Tab.0.left" timestamp="1651065461485">
+    <state width="1837" height="221" key="GridCell.Tab.0.center/62.0.1858.1080@62.0.1858.1080" timestamp="1651071557858" />
+    <state width="1837" height="221" key="GridCell.Tab.0.left" timestamp="1651071557858">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="221" key="GridCell.Tab.0.left/62.0.1858.1080@62.0.1858.1080" timestamp="1651065461485" />
-    <state width="1837" height="221" key="GridCell.Tab.0.right" timestamp="1651065461485">
+    <state width="1837" height="221" key="GridCell.Tab.0.left/62.0.1858.1080@62.0.1858.1080" timestamp="1651071557858" />
+    <state width="1837" height="221" key="GridCell.Tab.0.right" timestamp="1651071557858">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="221" key="GridCell.Tab.0.right/62.0.1858.1080@62.0.1858.1080" timestamp="1651065461485" />
-    <state x="492" y="185" key="SettingsEditor" timestamp="1651061021643">
+    <state width="1837" height="221" key="GridCell.Tab.0.right/62.0.1858.1080@62.0.1858.1080" timestamp="1651071557858" />
+    <state x="492" y="185" key="SettingsEditor" timestamp="1651070945778">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="492" y="185" key="SettingsEditor/62.0.1858.1080@62.0.1858.1080" timestamp="1651061021643" />
+    <state x="492" y="185" key="SettingsEditor/62.0.1858.1080@62.0.1858.1080" timestamp="1651070945778" />
     <state x="698" y="249" width="585" height="582" key="find.popup" timestamp="1650801927684">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
