@@ -20,16 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb046f52-bd7f-4e60-b9a5-03522fcc91d9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/russian-invasion-map-admin.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Map.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Player/Player.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Player/Player.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Player/player.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Player/player.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/GeoJson/geoJsonAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/GeoJson/geoJsonAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/GeoJson/geoJsonReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/GeoJson/geoJsonReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/GeoJson/geoJsonSelectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/GeoJson/geoJsonSelectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,22 +154,22 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="771" y="295" key="FileChooserDialogImpl/62.0.1858.1080@62.0.1858.1080" timestamp="1651073043619" />
-    <state width="1837" height="221" key="GridCell.Tab.0.bottom" timestamp="1651087346966">
+    <state width="1837" height="221" key="GridCell.Tab.0.bottom" timestamp="1651140313873">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="221" key="GridCell.Tab.0.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1651087346966" />
-    <state width="1837" height="221" key="GridCell.Tab.0.center" timestamp="1651087346966">
+    <state width="1837" height="221" key="GridCell.Tab.0.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1651140313873" />
+    <state width="1837" height="221" key="GridCell.Tab.0.center" timestamp="1651140313873">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="221" key="GridCell.Tab.0.center/62.0.1858.1080@62.0.1858.1080" timestamp="1651087346966" />
-    <state width="1837" height="221" key="GridCell.Tab.0.left" timestamp="1651087346965">
+    <state width="1837" height="221" key="GridCell.Tab.0.center/62.0.1858.1080@62.0.1858.1080" timestamp="1651140313873" />
+    <state width="1837" height="221" key="GridCell.Tab.0.left" timestamp="1651140313873">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="221" key="GridCell.Tab.0.left/62.0.1858.1080@62.0.1858.1080" timestamp="1651087346965" />
-    <state width="1837" height="221" key="GridCell.Tab.0.right" timestamp="1651087346966">
+    <state width="1837" height="221" key="GridCell.Tab.0.left/62.0.1858.1080@62.0.1858.1080" timestamp="1651140313873" />
+    <state width="1837" height="221" key="GridCell.Tab.0.right" timestamp="1651140313873">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="221" key="GridCell.Tab.0.right/62.0.1858.1080@62.0.1858.1080" timestamp="1651087346966" />
+    <state width="1837" height="221" key="GridCell.Tab.0.right/62.0.1858.1080@62.0.1858.1080" timestamp="1651140313873" />
     <state x="492" y="185" key="SettingsEditor" timestamp="1651073112979">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
