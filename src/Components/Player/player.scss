@@ -1,8 +1,10 @@
 .player{
   position: fixed;
   bottom: 0;
-  z-index: 999;
-  width: 75vw;
+  z-index: 9999;
+  width: 60vw;
+  left: 10%;
+  transform: translateX(-10%);
   &__control{
     display: flex;
     justify-content: space-around;
@@ -10,4 +12,21 @@
   &__item{
     width: 37px;
   }
+  &__button{
+    font-size: 18px;
+    padding: 15px 30px;
+    outline: none;
+    background: white;
+    color: black;
+    cursor: pointer;
+    &:hover{
+      background: black;
+      color: white;
+    }
+  }
+}
+.progress{
+  cursor: pointer;
+  accent-color: #0c0f28;
+  width: 100%;
 }

@@ -20,32 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb046f52-bd7f-4e60-b9a5-03522fcc91d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/Calendar/Calendar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Calendar/calendar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Header/Header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Header/header.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/ListEvents/ListEvents.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/ListEvents/listEvents.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/Date/dataAction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/Date/dateContstants.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/Date/dateReduser.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/News/newsAction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/News/newsConstants.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/News/newsReduser.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/News/newsSelectors.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/configData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Calendar.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Map.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Player/Player.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Player/Player.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Player/player.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Player/player.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/GeoJson/geoJsonAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/GeoJson/geoJsonAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/GeoJson/geoJsonConsts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/GeoJson/geoJsonConsts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/GeoJson/geoJsonReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/GeoJson/geoJsonReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/GeoJson/geoJsonSelectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/GeoJson/geoJsonSelectors.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
@@ -75,7 +56,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../russian-invasion-map-admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -141,6 +122,13 @@
       <workItem from="1650955276987" duration="15358000" />
       <workItem from="1651042856944" duration="615000" />
       <workItem from="1651059547569" duration="6430000" />
+      <workItem from="1651073020574" duration="25000" />
+      <workItem from="1651073047103" duration="7000" />
+      <workItem from="1651073068591" duration="2000" />
+      <workItem from="1651073091072" duration="52000" />
+      <workItem from="1651073199381" duration="96000" />
+      <workItem from="1651073308852" duration="11393000" />
+      <workItem from="1651130504925" duration="3363000" />
     </task>
     <servers />
   </component>
@@ -159,40 +147,35 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$" />
-    </ignored-roots>
-  </component>
   <component name="WindowStateProjectService">
     <state x="741" y="342" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1650615011067">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="741" y="342" key="#com.intellij.fileTypes.FileTypeChooser/62.0.1858.1080@62.0.1858.1080" timestamp="1650615011067" />
-    <state x="771" y="295" key="FileChooserDialogImpl" timestamp="1651059688343">
+    <state x="771" y="295" key="FileChooserDialogImpl" timestamp="1651073043619">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="771" y="295" key="FileChooserDialogImpl/62.0.1858.1080@62.0.1858.1080" timestamp="1651059688343" />
-    <state width="1837" height="221" key="GridCell.Tab.0.bottom" timestamp="1651071557858">
+    <state x="771" y="295" key="FileChooserDialogImpl/62.0.1858.1080@62.0.1858.1080" timestamp="1651073043619" />
+    <state width="1837" height="221" key="GridCell.Tab.0.bottom" timestamp="1651087346966">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="221" key="GridCell.Tab.0.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1651071557858" />
-    <state width="1837" height="221" key="GridCell.Tab.0.center" timestamp="1651071557858">
+    <state width="1837" height="221" key="GridCell.Tab.0.bottom/62.0.1858.1080@62.0.1858.1080" timestamp="1651087346966" />
+    <state width="1837" height="221" key="GridCell.Tab.0.center" timestamp="1651087346966">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="221" key="GridCell.Tab.0.center/62.0.1858.1080@62.0.1858.1080" timestamp="1651071557858" />
-    <state width="1837" height="221" key="GridCell.Tab.0.left" timestamp="1651071557858">
+    <state width="1837" height="221" key="GridCell.Tab.0.center/62.0.1858.1080@62.0.1858.1080" timestamp="1651087346966" />
+    <state width="1837" height="221" key="GridCell.Tab.0.left" timestamp="1651087346965">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="221" key="GridCell.Tab.0.left/62.0.1858.1080@62.0.1858.1080" timestamp="1651071557858" />
-    <state width="1837" height="221" key="GridCell.Tab.0.right" timestamp="1651071557858">
+    <state width="1837" height="221" key="GridCell.Tab.0.left/62.0.1858.1080@62.0.1858.1080" timestamp="1651087346965" />
+    <state width="1837" height="221" key="GridCell.Tab.0.right" timestamp="1651087346966">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="221" key="GridCell.Tab.0.right/62.0.1858.1080@62.0.1858.1080" timestamp="1651071557858" />
-    <state x="492" y="185" key="SettingsEditor" timestamp="1651070945778">
+    <state width="1837" height="221" key="GridCell.Tab.0.right/62.0.1858.1080@62.0.1858.1080" timestamp="1651087346966" />
+    <state x="492" y="185" key="SettingsEditor" timestamp="1651073112979">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="492" y="185" key="SettingsEditor/62.0.1858.1080@62.0.1858.1080" timestamp="1651070945778" />
+    <state x="492" y="185" key="SettingsEditor/62.0.1858.1080@62.0.1858.1080" timestamp="1651073112979" />
     <state x="698" y="249" width="585" height="582" key="find.popup" timestamp="1650801927684">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>

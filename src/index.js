@@ -16,11 +16,11 @@ const queryClient = new QueryClient({
 
 ReactDOM.render(
   <Provider store={store}>
-    <PersistGate persistor={persistor}>
+
        <QueryClientProvider client={queryClient}>
           <App />
        </QueryClientProvider>
-    </PersistGate>
+
   </Provider>,
 
   document.getElementById('root')
