@@ -1,10 +1,12 @@
 export const filteredDataOnDate = (state) => {
-
-   return state.geoJson.storeGeoJson
+  return state.geoJson.storeGeoJson
 }
 
 export const filteredDataOnPeriod = (state) => {
-
-   return state.geoJson.storeGeoJsonForPeriod && state.geoJson.storeGeoJsonForPeriod.sort((a, b) => Date.parse(a.date) - Date.parse(b.date))
+  return (
+    state.geoJson.storeGeoJsonForPeriod &&
+    state.geoJson.storeGeoJsonForPeriod.sort(
+      (a, b) => Date.parse(a.date) - Date.parse(b.date)
+    )
+  )
 }
-
