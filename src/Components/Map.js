@@ -14,7 +14,7 @@ import 'react-leaflet-fullscreen/dist/styles.css'
 import { getDataGeoJson } from '../redux/GeoJson/geoJsonAction'
 import { filteredDataOnDate } from '../redux/GeoJson/geoJsonSelectors'
 import { mapCenter } from '../Constants'
-import { Player } from './Player/Player'
+// import { Player } from './Player/Player'
 
 export const Map = () => {
   const geojsonData = useSelector(filteredDataOnDate)
@@ -69,8 +69,8 @@ export const Map = () => {
         </LayersControl.BaseLayer>
       </LayersControl>
       <FeatureGroup ref={(item) => _onFeatureGroupReady(item)} />
-      <FullscreenControl />
-      <Player />
+      <FullscreenControl position='bottomleft' />
+      {/* <Player /> */}
     </MapContainer>
   )
 }

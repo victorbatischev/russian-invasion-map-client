@@ -12,12 +12,12 @@ export const getDataGeoJson =
     try {
       if (endDate) {
         const response = await axios.get(
-          `${process.env.REACT_APP_API_URL}/map/get-data/?startDate=${date}&date=${endDate}`
+          `${process.env.REACT_APP_API_URL}/map/get-data?startDate=${date}&date=${endDate}`
         )
         dispatch(setGeoJson(response.data.data))
       } else {
         const response = await axios.get(
-          `${process.env.REACT_APP_API_URL}/map/get-data/?date=${date}`
+          `${process.env.REACT_APP_API_URL}/map/get-data?date=${date}`
         )
         dispatch(setGeoJson(response.data.data))
       }
