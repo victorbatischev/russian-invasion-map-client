@@ -20,7 +20,7 @@ const persistConfigDates = {
 }
 
 let reducers = combineReducers({
-  geoJson: persistReducer(persistConfig, geoJsonReducer),
+  geoJson: geoJsonReducer,
   date: persistReducer(persistConfigDates, dateReducer),
   news: newsReducer
 })

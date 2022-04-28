@@ -1,10 +1,10 @@
 export const filteredDataOnDate = (state) => {
 
-   // const date = state.date.selectedDate
-   //
-   // let result = state.geoJson.storeGeoJson.filter(item => item.date <= date.toLocaleString().substring(0,10))
-
-  // return result[result.length - 1]?.geoJsonData || []
-
    return state.geoJson.storeGeoJson
 }
+
+export const filteredDataOnPeriod = (state) => {
+
+   return state.geoJson.storeGeoJsonForPeriod && state.geoJson.storeGeoJsonForPeriod.sort((a, b) => Date.parse(a.date) - Date.parse(b.date))
+}
+
