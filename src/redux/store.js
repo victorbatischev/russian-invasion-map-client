@@ -8,11 +8,12 @@ import { dateReducer } from './Date/dateReduser'
 import thunk from 'redux-thunk'
 import { newsReducer } from './News/newsReduser'
 
-const persistConfig = {
-  key: 'root',
-  storage,
-  whitelist: ['storeGeoJson']
-}
+// const persistConfig = {
+//   key: 'root',
+//   storage,
+//   whitelist: ['storeGeoJson']
+// }
+
 const persistConfigDates = {
   key: 'root-date',
   storage,
