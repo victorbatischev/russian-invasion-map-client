@@ -1,12 +1,12 @@
-import {applyMiddleware, combineReducers, compose} from 'redux'
+import { applyMiddleware, combineReducers, compose } from 'redux'
 import { createStore } from 'redux'
 
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import { geoJsonReducer } from './GeoJson/geoJsonReducer'
-import {dateReducer} from "./Date/dateReduser";
-import thunk from "redux-thunk";
-import {newsReducer} from "./News/newsReduser";
+import { dateReducer } from './Date/dateReduser'
+import thunk from 'redux-thunk'
+import { newsReducer } from './News/newsReduser'
 
 const persistConfig = {
   key: 'root',
@@ -16,7 +16,7 @@ const persistConfig = {
 const persistConfigDates = {
   key: 'root-date',
   storage,
-  blacklist: ['endDate', 'startDate','selectedDate']
+  blacklist: ['endDate', 'startDate', 'selectedDate']
 }
 
 let reducers = combineReducers({
@@ -25,15 +25,7 @@ let reducers = combineReducers({
   news: newsReducer
 })
 
-const store = createStore(
-  reducers,
-  compose(
-    applyMiddleware(
-      thunk
-    ),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-
-))
+const store = createStore(reducers, compose(applyMiddleware(thunk)))
 
 export const persistor = persistStore(store)
 
