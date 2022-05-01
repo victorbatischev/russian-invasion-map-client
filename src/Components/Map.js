@@ -24,7 +24,7 @@ export const Map = () => {
 
   const _onFeatureGroupReady = (reactFGref) => {
 
-      console.log('load', geojsonData ? JSON.parse(geojsonData) : null)
+     // console.log('load', geojsonData ? JSON.parse(geojsonData) : null)
       let leafletGeoJSON = new L.GeoJSON(  geojsonData ? JSON.parse(geojsonData) : null)
 
       let leafletFG = reactFGref
@@ -49,7 +49,7 @@ export const Map = () => {
   }, [selectedDate])
 
 
-  console.log('render map')
+  //console.log('render map')
 
   return (
     <MapContainer className={'map'} center={mapCenter} zoom={6}>
@@ -83,7 +83,7 @@ export const Map = () => {
         </>
       }
        <FullscreenControl />
-       <Player />
+       {/*<Player />*/}
     </MapContainer>
   )
 }

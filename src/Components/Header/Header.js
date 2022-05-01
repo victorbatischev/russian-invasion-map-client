@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './header.scss'
 import {currentDate} from "../../Constants";
 import {Calendar} from "../Calendar/Calendar";
@@ -25,13 +25,17 @@ export const Header = () => {
          console.log('start', start.toLocaleString("sv-SE").substring(0,10))
          dispatch(getDataGeoJson(start.toLocaleString("sv-SE").substring(0,10), end.toLocaleString("sv-SE").substring(0,10)))
       }
-
    }
 
    const onChangeDateOnly = dates => {
     dispatch(setSelectedDate(dates))
     //dispatch(getDataGeoJson(dates.toLocaleString("sv-SE").substring(0,10)))
    }
+
+   // useEffect(()=>{
+   //    dispatch(setStartDate(startDate));
+   //    dispatch(setEndDate(endDate));
+   // }, [])
 
    return (
      <div className={'header'}>

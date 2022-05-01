@@ -12,8 +12,9 @@ const App = () => {
       <Header />
       <main className={'App__main'}>
         <Map />
-        {/*<ListEvents />*/}
+        <ListEvents />
       </main>
+       <Player />
     </div>
   )
 }

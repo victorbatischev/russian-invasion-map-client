@@ -1,27 +1,26 @@
 .player{
-  position: fixed;
-  bottom: 0;
-  z-index: 9999;
-  width: 60vw;
-  left: 10%;
-  transform: translateX(-10%);
+  width: 100%;
+  &__container{
+    box-shadow: 5px 5px 15px 5px #000000;
+    padding: 20px 27px;
+  }
   &__control{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
   &__item{
     width: 37px;
   }
   &__button{
-    font-size: 18px;
-    padding: 15px 30px;
+    font-size: 31px;
     outline: none;
-    background: white;
-    color: black;
+    background: transparent;
+    color: #003058;
     cursor: pointer;
-    &:hover{
-      background: black;
-      color: white;
+    border: none;
+    &:disabled{
+      color: darkgrey;
+      cursor: auto;
     }
   }
 }
@@ -29,4 +28,16 @@
   cursor: pointer;
   accent-color: #0c0f28;
   width: 100%;
+}
+
+
+.hint{
+  position: absolute;
+
+  &__line{
+    height: 17px;
+    width: 6px;
+    margin: -50% 0;
+    background: #333e33;
+  }
 }

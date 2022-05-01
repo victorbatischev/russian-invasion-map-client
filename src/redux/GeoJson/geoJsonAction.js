@@ -17,7 +17,6 @@ export const getDataGeoJson = (date,endDate=null) => async (dispatch) => {
       dispatch(setGeoJson(response.data.data))
     }
   }catch (e) {
-    debugger
     dispatch(setGeoJson({json_data: null}))
   }
 }

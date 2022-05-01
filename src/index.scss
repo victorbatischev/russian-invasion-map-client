@@ -22,12 +22,13 @@ code {
 }
 
 .App {
-  height: 100vh;
   position: relative;
   overflow: hidden;
 
+
   &__main {
     display: flex;
+    height: 90vh;
   }
 }
 
@@ -45,7 +46,7 @@ code {
 
 .map {
   flex: 0 0 75%;
-  height: 100vh;
+
 }
 
 .leaflet-touch .leaflet-control-layers-toggle {
