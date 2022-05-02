@@ -25,7 +25,7 @@ export const Player = () => {
    const [progressValue, setProgressValue] = useState(0)
    const [startPlayer, setStartPlayer] = useState(false)
 
-   const stepPlayer = geojsonData ? 100 / geojsonData.length : 0
+   const stepPlayer = geojsonData ? +( 100 / (geojsonData.length - 1 )).toFixed(12) : 0
 
    const changeProgressBar = (e) => {
       const value = +e.target.value
@@ -37,40 +37,47 @@ export const Player = () => {
       setProgressValue(+e.target.value)
    }
 
-   const onStart = () => {
-      // if(progressValue>=100) {
-      //    dispatch(setGeoJson(geojsonData[0]))
-      //    setProgressValue(0)
-      // }
-      setStartPlayer(prev => !prev)
-   }
+   const onStart = () => setStartPlayer(prev => !prev)
 
-   const forwardRewind = () => {
-      dispatch(setGeoJson(geojsonData[Math.ceil((progressValue/stepPlayer))]))
-      setProgressValue(prev => prev + stepPlayer)
-   }
-   const backwardRewind = () => {
-      dispatch(setGeoJson(geojsonData[Math.ceil(progressValue/stepPlayer)-2]))
-      setProgressValue(prev => prev - stepPlayer)
-   }
+
+   // const forwardRewind = () => {
+   //    if(progressValue < 100){
+   //       dispatch(setGeoJson(geojsonData[Math.ceil((progressValue/stepPlayer))]))
+   //       setProgressValue(prev => prev + stepPlayer)
+   //    }
+   // }
+   //
+   // const backwardRewind = () => {
+   //    console.log('ifffff', Math.ceil(progressValue/stepPlayer)-1)
+   //    if(progressValue > 0){
+   //       console.log('ifffff2222222222', Math.ceil(progressValue/stepPlayer)-1)
+   //       dispatch(setGeoJson(geojsonData[Math.floor(progressValue/stepPlayer)-1]))
+   //       setProgressValue(prev => prev - stepPlayer)
+   //    }
+   // }
+
    const jumpEnd = () => {
       setProgressValue(100)
-      // dispatch(setGeoJson(geojsonData[geojsonData.length-1]))
+      dispatch(setGeoJson(geojsonData[geojsonData.length-1]))
    }
-   const jumpStart = () => setProgressValue(0)
-
+   const jumpStart = () => {
+      setProgressValue(0)
+      dispatch(setGeoJson(geojsonData[0]))
+   }
 
    useEffect( () => {
-      const index = Math.ceil(progressValue/stepPlayer)
+
       const timer = setTimeout(() => {
          if(startPlayer){
-            if(progressValue>=100){
+            if(Math.ceil(progressValue)>=100){
                setStartPlayer(false)
                return;
             }
-            console.log('index = ', index, "Длина ползунка после = ",progressValue, "Шаг = ", stepPlayer)
-            dispatch(setGeoJson(geojsonData[index]))
+            const index = Math.ceil(progressValue/stepPlayer+1)
+            // console.log('index = ', index, "Длина ползунка после = ",progressValue, "Шаг = ", stepPlayer)
             setProgressValue(prev => prev + stepPlayer)
+            dispatch(setGeoJson(geojsonData[index]))
+
          }
       }, 1000)
       return () => clearTimeout(timer);
@@ -78,13 +85,17 @@ export const Player = () => {
 
    }, [progressValue, startPlayer])
 
-   console.log(geojsonData)
+   useEffect(()=>{
+      setProgressValue(0)
+   }, [geojsonData])
+
+
    return (
      <div className={'player'}>
         <div className="player__container">
            <div className="player__control">
               <button disabled={!geojsonData} className={'player__button'} onClick={jumpStart}><FontAwesomeIcon icon={faBackwardStep} /></button>
-              <button disabled={!geojsonData} className={'player__button'} onClick={backwardRewind}><FontAwesomeIcon icon={faBackward} /></button>
+              {/*<button disabled={!geojsonData} className={'player__button'} onClick={backwardRewind}><FontAwesomeIcon icon={faBackward} /></button>*/}
               <button
                 disabled={!geojsonData} className={'player__button'}
                       onClick={onStart}>{(startPlayer && progressValue < 100) ?
@@ -93,16 +104,16 @@ export const Player = () => {
                 <FontAwesomeIcon icon={faPlay} />
               }
               </button>
-              <button disabled={!geojsonData} className={'player__button'} onClick={forwardRewind}><FontAwesomeIcon icon={faForward} /></button>
+              {/*<button disabled={!geojsonData} className={'player__button'} onClick={forwardRewind}><FontAwesomeIcon icon={faForward} /></button>*/}
               <button disabled={!geojsonData} className={'player__button'} onClick={jumpEnd}><FontAwesomeIcon icon={faForwardStep} /></button>
            </div>
            <div style={{position:"relative"}}>
-              <input disabled={!geojsonData} className={'player__progress progress'} type={"range"} max={100} step={stepPlayer} value={progressValue}
+              <input disabled={!geojsonData} className={'player__progress progress'} type={"range"} step={stepPlayer} value={progressValue}
                      onChange={(e) => changeProgressBar(e)}/>
               {geojsonData && geojsonData.map((item, index)=>(
-                <div className={'player__hint hint'}
+                <div className={'player__hint hint'} key={index}
                      // style={{left: (index+0.5)*100/geojsonData.length+'%'}}>{item.date}
-                   style={{left: (index)*stepPlayer+index+'%'}}>
+                      style={{left: (index)*stepPlayer+'%'}}>
                       <p>{item.date}</p>
                      <div className={'hint__line'} />
                 </div>
