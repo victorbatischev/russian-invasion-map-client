@@ -21,6 +21,7 @@ export const geoJsonReducer = (state = initialState, action) => {
        }
         return {
           ...state,
+          storeGeoJsonForPeriod: null,
           storeGeoJson: action.payload.geoJsonData.json_data
         }
     default:

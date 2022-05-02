@@ -89,7 +89,7 @@ export const Player = () => {
       setProgressValue(0)
    }, [geojsonData])
 
-
+   console.log(geojsonData)
    return (
      <div className={'player'}>
         <div className="player__container">
