@@ -19,8 +19,6 @@ import {
 export const Player = () => {
 
    const dispatch = useDispatch()
-   const startDate = useSelector((state) => state.date.startDate)
-   const endDate = useSelector((state) => state.date.endDate)
    const geojsonData = useSelector(filteredDataOnPeriod)
    const [progressValue, setProgressValue] = useState(0)
    const [startPlayer, setStartPlayer] = useState(false)

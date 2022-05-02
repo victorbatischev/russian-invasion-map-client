@@ -20,6 +20,8 @@ export const Map = () => {
   const geojsonData = useSelector(filteredDataOnDate)
   const dispatch = useDispatch()
   const selectedDate = useSelector((state) => state.date.selectedDate)
+   const startDate = useSelector((state) => state.date.startDate)
+   const endDate = useSelector((state) => state.date.endDate)
 
 
   const _onFeatureGroupReady = (reactFGref) => {
