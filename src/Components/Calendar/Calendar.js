@@ -37,8 +37,10 @@ export const Calendar = ({onChange, endDate, startDate,selectsRange}) => {
          selected={startDate}
          onChange={onChange}
          startDate={startDate}
+
          endDate={endDate}
          selectsRange={selectsRange}
+         minDate={new Date("2/24/22")}
          customInput={<CustomInput />}
        />
 
