@@ -9,7 +9,7 @@ import {setEndDate, setSelectedDate, setStartDate} from "../../redux/Date/dataAc
 import {getDataGeoJson} from "../../redux/GeoJson/geoJsonAction";
 
 
-export const Header = () => {
+export const Header = ({startPlayer}) => {
 
 
    const dispatch = useDispatch()
@@ -51,6 +51,7 @@ export const Header = () => {
                       startDate={selectedDate}
                       onChange={onChangeDateOnly}
                       selectsRange={false}
+                      startPlayer={startPlayer}
                     />
                  </li>
                  <li className="menu__item"> Период:
@@ -59,6 +60,7 @@ export const Header = () => {
                       endDate={endDate}
                       onChange={onChangeDatePeriod}
                       selectsRange={true}
+                      startPlayer={startPlayer}
                     />
                  </li>
               </ul>

@@ -1,9 +1,9 @@
-import React, {forwardRef} from 'react'
+import React, {forwardRef, useState} from 'react'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import './calendar.scss'
 
-export const Calendar = ({onChange, endDate, startDate,selectsRange}) => {
+export const Calendar = ({onChange, endDate, startDate,selectsRange,startPlayer}) => {
 
    const CustomInput = forwardRef(({ value, onClick }, ref) => (
      <button className="calendar-input" onClick={onClick} ref={ref}>
@@ -22,6 +22,7 @@ export const Calendar = ({onChange, endDate, startDate,selectsRange}) => {
          selectsRange={selectsRange}
          minDate={new Date("2/24/22")}
          maxDate={new Date()}
+         disabled={startPlayer}
          customInput={<CustomInput />}
        />
     </div>

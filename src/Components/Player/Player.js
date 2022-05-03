@@ -16,12 +16,12 @@ import {
 
 
 
-export const Player = () => {
+export const Player = ({startPlayer, setStartPlayer}) => {
 
    const dispatch = useDispatch()
    const geojsonData = useSelector(filteredDataOnPeriod)
    const [progressValue, setProgressValue] = useState(0)
-   const [startPlayer, setStartPlayer] = useState(false)
+   // const [startPlayer, setStartPlayer] = useState(false)
 
    const stepPlayer = geojsonData ? +( 100 / (geojsonData.length - 1 )).toFixed(12) : 0
 
