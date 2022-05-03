@@ -1,12 +1,9 @@
 import {SET_END_DATE, SET_SELECTED_DATE, SET_START_DATE} from "./dateContstants";
 import {currentDate} from "../../Constants";
 
-const weekAgo = new Date();
-weekAgo.setDate(weekAgo.getDate() - 7);
-
 let initialState = {
-   startDate: weekAgo,
-   endDate: new Date(),
+   startDate: null,
+   endDate: null,
    selectedDate: new Date(),
 }
 

@@ -1,4 +1,4 @@
-import {SET_GEO_JSON} from './geoJsonConsts'
+import {SET_GEO_JSON, ZEROING_GEO_JSON_FOR_PERIOD} from './geoJsonConsts'
 
 let initialState = {
   storeGeoJson: null,
@@ -27,6 +27,11 @@ export const geoJsonReducer = (state = initialState, action) => {
              storeGeoJson: action.payload.geoJsonData.json_data,
           }
        }
+     case ZEROING_GEO_JSON_FOR_PERIOD:
+        return{
+           ...state,
+           storeGeoJsonForPeriod: null
+        }
     default:
       return state
   }
