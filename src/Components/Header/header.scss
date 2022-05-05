@@ -1,45 +1,44 @@
-.header{
+.header {
   position: fixed;
   width: 100%;
   z-index: 999;
   background: #fff;
 
   padding: 10px 0;
-  &__container{
+  &__container {
     padding: 0 15px;
   }
 }
 
-.menu{
+.menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  &__top{
+  &__top {
     display: flex;
     list-style: none;
     margin: 0 0 0 45px;
     gap: 25px;
   }
-  &__item-top{
+  &__item-top {
     font-size: 18px;
     color: #060d44;
     cursor: pointer;
     padding: 5px 25px;
-    &_active{
+    &_active {
       background: #051f7c;
       border-radius: 10px;
       color: white;
     }
-
   }
-  &__date-list{
+  &__date-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 0 10px;
     gap: 2.2rem;
   }
-  &__item-date{
+  &__item-date {
     color: #666666;
     font-size: 16px;
     font-weight: 600;
@@ -49,7 +48,7 @@
     cursor: pointer;
     position: relative;
 
-    span{
+    span {
       font-size: 15px;
       padding: 10px;
       background: #f9f9f9;
@@ -60,9 +59,8 @@
       color: #000;
       font-weight: 600;
     }
-
   }
-  &__calendar{
+  &__calendar {
     position: absolute;
     top: 28px;
     left: 0;
