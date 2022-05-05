@@ -3,24 +3,43 @@
   width: 100%;
   z-index: 999;
   background: #fff;
-  display: flex;
-  justify-content: flex-end;
+
   padding: 10px 0;
   &__container{
-
+    padding: 0 15px;
   }
 }
 
 .menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__top{
+    display: flex;
+    list-style: none;
+    margin: 0 0 0 45px;
+    gap: 25px;
+  }
+  &__item-top{
+    font-size: 18px;
+    color: #060d44;
+    cursor: pointer;
+    padding: 5px 25px;
+    &_active{
+      background: #051f7c;
+      border-radius: 10px;
+      color: white;
+    }
 
-  &__list{
+  }
+  &__date-list{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 0 10px;
     gap: 2.2rem;
   }
-  &__item{
+  &__item-date{
     color: #666666;
     font-size: 16px;
     font-weight: 600;

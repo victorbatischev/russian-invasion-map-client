@@ -12,9 +12,9 @@ const App = () => {
 
   return (
     <div className={'App'}>
-      <Header startPlayer={startPlayer}/>
+      {/*<Header startPlayer={startPlayer}/>*/}
       <main className={'App__main'}>
-        <Map />
+        <Map startPlayer={startPlayer}/>
         <ListEvents />
       </main>
        <Player startPlayer={startPlayer} setStartPlayer={setStartPlayer}/>

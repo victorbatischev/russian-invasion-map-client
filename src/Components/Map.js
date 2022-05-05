@@ -1,28 +1,26 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import {
-  TileLayer,
-  FeatureGroup,
-  LayersControl,
-  MapContainer
+   TileLayer,
+   FeatureGroup,
+   LayersControl,
+   MapContainer
 } from 'react-leaflet'
 import { useDispatch, useSelector } from 'react-redux'
 import L from 'leaflet'
-import {getDataGeoJson, setGeoJson} from '../redux/GeoJson/geoJsonAction'
+import {getDataGeoJson} from '../redux/GeoJson/geoJsonAction'
 import { filteredDataOnDate } from '../redux/GeoJson/geoJsonSelectors'
-import {mapCenter} from '../Constants'
 import { FullscreenControl } from "react-leaflet-fullscreen";
 import "react-leaflet-fullscreen/dist/styles.css";
-import {Player} from "./Player/Player";
+import {MinimapControl} from "./MinimapControl/MinimapControl";
+import {Header} from "./Header/Header";
+import {mapCenterUkraine} from "../Constants";
 
-export const Map = () => {
+export const Map = ({startPlayer}) => {
 
   let _editableFG = null
   const geojsonData = useSelector(filteredDataOnDate)
   const dispatch = useDispatch()
   const selectedDate = useSelector((state) => state.date.selectedDate)
-   const startDate = useSelector((state) => state.date.startDate)
-   const endDate = useSelector((state) => state.date.endDate)
-
 
   const _onFeatureGroupReady = (reactFGref) => {
 
@@ -51,10 +49,10 @@ export const Map = () => {
   }, [selectedDate])
 
 
-  //console.log('render map')
 
   return (
-    <MapContainer className={'map'} center={mapCenter} zoom={6}>
+    <MapContainer className={'map'} center={mapCenterUkraine} zoom={6} zoomControl={true}>
+       <Header startPlayer={startPlayer}/>
       {1===4 ? <h1>Loading...</h1> :
         <>
         <LayersControl position='bottomleft'>
@@ -85,7 +83,7 @@ export const Map = () => {
         </>
       }
        <FullscreenControl />
-       {/*<Player />*/}
+       <MinimapControl position="bottomright" />
     </MapContainer>
   )
 }
