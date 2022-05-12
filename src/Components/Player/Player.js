@@ -105,7 +105,7 @@ export const Player = ({startPlayer, setStartPlayer}) => {
               {/*<button disabled={!geojsonData} className={'player__button'} onClick={forwardRewind}><FontAwesomeIcon icon={faForward} /></button>*/}
               <button disabled={!geojsonData} className={'player__button'} onClick={()=>jumpEnd()}><FontAwesomeIcon icon={faForwardStep} /></button>
            </div>
-           <div style={{position:"relative"}}>
+           <div className={'player__strip'}>
               <input disabled={!geojsonData} className={'player__progress progress'} type={"range"} step={stepPlayer} value={progressValue}
                      onChange={(e) => changeProgressBar(e)}/>
               {geojsonData && geojsonData.map((item, index)=>(

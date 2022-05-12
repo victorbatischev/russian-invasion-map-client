@@ -14,15 +14,15 @@ import {
   setStartDate
 } from '../../redux/Date/dataAction'
 import { getDataGeoJson } from '../../redux/GeoJson/geoJsonAction'
-import { useMap } from 'react-leaflet'
 
-export const Header = ({ startPlayer }) => {
+
+export const Header = ({ startPlayer, mapRef }) => {
   const dispatch = useDispatch()
   const startDate = useSelector((state) => state.date.startDate)
   const endDate = useSelector((state) => state.date.endDate)
   const selectedDate = useSelector((state) => state.date.selectedDate)
   const [active, setActive] = useState(0)
-  const map = useMap()
+
 
   const onChangeDatePeriod = (dates) => {
     const [start, end] = dates
@@ -45,11 +45,11 @@ export const Header = ({ startPlayer }) => {
     const index = e.target.dataset.index
     switch (index) {
       case '0':
-        map.setView(mapCenterUkraine, 6)
+        mapRef.current.setView(mapCenterUkraine, 6)
         setActive(+e.target.dataset.index)
         break
       case '1':
-        map.setView(mapCenterDonbass, 7)
+        mapRef.current.setView(mapCenterDonbass, 7)
         setActive(+e.target.dataset.index)
         break
       default:

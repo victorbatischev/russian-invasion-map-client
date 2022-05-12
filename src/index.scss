@@ -28,7 +28,7 @@ code {
 
   &__main {
     display: flex;
-    height: 88vh;
+    height: 100vh;
   }
 }
 
@@ -46,7 +46,8 @@ code {
 
 .map {
   flex: 0 0 75%;
-
+  height: 94vh;
+  top: 6vh;
 }
 
 .leaflet-touch .leaflet-control-layers-toggle {

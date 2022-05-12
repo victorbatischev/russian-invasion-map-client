@@ -13,7 +13,7 @@ const BOUNDS_STYLE = { weight: 1 }
 
 function MinimapBounds({ parentMap, zoom }) {
    const minimap = useMap()
-   console.log(minimap)
+
 
    // Clicking a point on the minimap sets the parent's map center
    const onClick = useCallback(

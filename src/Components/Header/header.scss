@@ -3,8 +3,11 @@
   width: 100%;
   z-index: 999;
   background: #fff;
-
-  padding: 10px 0;
+  top: 0;
+  display: flex;
+  height: 6vh;
+  flex-direction: column;
+  justify-content: center;
   &__container {
     padding: 0 15px;
   }
@@ -17,7 +20,6 @@
   &__top {
     display: flex;
     list-style: none;
-    margin: 0 0 0 45px;
     gap: 25px;
   }
   &__item-top {
