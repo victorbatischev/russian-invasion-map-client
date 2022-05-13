@@ -19,7 +19,7 @@ export const Calendar = ({
   return (
     <div className={'calendar'}>
       <DatePicker
-        dateFormat='yyyy-MM-dd'
+        dateFormat='dd.MM.yyyy'
         selected={startDate}
         onChange={onChange}
         startDate={startDate}

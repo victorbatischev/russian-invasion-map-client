@@ -18,3 +18,10 @@ export const geojsonData = {
     name: 'Dinagat Islands'
   }
 }
+
+export const optionsDate = {
+  year: 'numeric',
+  month: 'numeric',
+  day: 'numeric',
+  timezone: 'UTC'
+};

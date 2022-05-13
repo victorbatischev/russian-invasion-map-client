@@ -26,25 +26,35 @@ export const Map = ({startPlayer, setStartPlayer, mapRef}) => {
 
   const _onFeatureGroupReady = (reactFGref) => {
 
-     // console.log('load', geojsonData ? JSON.parse(geojsonData) : null)
-      let leafletGeoJSON = new L.GeoJSON(  geojsonData ? JSON.parse(geojsonData) : null)
+     let parsedGeoJSON = geojsonData ? JSON.parse(geojsonData) : null
+     console.log('load', parsedGeoJSON)
+     let leafletGeoJSON = new L.GeoJSON(parsedGeoJSON)
 
-      let leafletFG = reactFGref
-
-      if (!leafletFG) {
+     if (!reactFGref) {
         return
-      }
+     }
 
-      reactFGref.clearLayers()
+     reactFGref.clearLayers()
 
-      leafletGeoJSON.eachLayer((layer) => {
-        leafletFG.addLayer(layer)
-      })
+     let index = 0
 
-      _editableFG = reactFGref
+     leafletGeoJSON.eachLayer((layer) => {
+        // добавляем стилизацию слоёв в GeoJSON
+        console.log(layer)
+        let color = parsedGeoJSON.features[index].properties?.fill
+        // в случае polyline или polygon меняем цвет
+        if (layer?.options?.color && color) {
+           layer.options.color = color
+        }
+        // в случае point меняем иконку и цвет
+        else if (layer?.options?.icon && color) {
+        }
+        reactFGref.addLayer(layer)
+        index++
+     })
+     _editableFG = reactFGref
 
   }
-
 
   useEffect(()=>{
     dispatch(getDataGeoJson(selectedDate.toLocaleString("sv-SE").substring(0,10)))

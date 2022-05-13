@@ -4,7 +4,7 @@ import {
   currentDate,
   mapCenterDonbass,
   mapCenterUkraine,
-  menuHeaderList
+  menuHeaderList, optionsDate
 } from '../../Constants'
 import { Calendar } from '../Calendar/Calendar'
 import { useDispatch, useSelector } from 'react-redux'
@@ -79,7 +79,7 @@ export const Header = ({ startPlayer, mapRef }) => {
           </ul>
           <ul className='menu__date-list'>
             <li className='menu__item-date'>
-              Сегодня: <span>{currentDate.toISOString().substring(0, 10)}</span>
+              Сегодня: <span>{currentDate.toLocaleString("ru", optionsDate)}</span>
             </li>
             <li className='menu__item-date'>
               Выбранная дата:
