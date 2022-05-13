@@ -25,7 +25,6 @@ code {
   position: relative;
   overflow: hidden;
 
-
   &__main {
     display: flex;
     height: 100vh;
@@ -46,8 +45,8 @@ code {
 
 .map {
   flex: 0 0 75%;
-  height: 94vh;
-  top: 6vh;
+  height: calc(100% - 50px);
+  top: 50px;
 }
 
 .leaflet-touch .leaflet-control-layers-toggle {

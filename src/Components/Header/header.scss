@@ -5,9 +5,10 @@
   background: #fff;
   top: 0;
   display: flex;
-  height: 6vh;
+  height: 50px;
   flex-direction: column;
   justify-content: center;
+  box-shadow: 1px 1px 10px 1px #ccc;
   &__container {
     padding: 0 15px;
   }
@@ -20,7 +21,7 @@
   &__top {
     display: flex;
     list-style: none;
-    gap: 25px;
+    gap: 5px;
   }
   &__item-top {
     font-size: 18px;
@@ -52,14 +53,15 @@
 
     span {
       font-size: 15px;
-      padding: 10px;
-      background: #f9f9f9;
+      padding: 8px;
+      background: #f2f2f2;
       border-radius: 10px;
       font-family: Arial;
       cursor: pointer;
       display: block;
       color: #000;
       font-weight: 600;
+      margin-left: 5px;
     }
   }
   &__calendar {

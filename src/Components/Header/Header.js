@@ -4,7 +4,8 @@ import {
   currentDate,
   mapCenterDonbass,
   mapCenterUkraine,
-  menuHeaderList, optionsDate
+  menuHeaderList,
+  optionsDate
 } from '../../Constants'
 import { Calendar } from '../Calendar/Calendar'
 import { useDispatch, useSelector } from 'react-redux'
@@ -15,14 +16,12 @@ import {
 } from '../../redux/Date/dataAction'
 import { getDataGeoJson } from '../../redux/GeoJson/geoJsonAction'
 
-
 export const Header = ({ startPlayer, mapRef }) => {
   const dispatch = useDispatch()
   const startDate = useSelector((state) => state.date.startDate)
   const endDate = useSelector((state) => state.date.endDate)
   const selectedDate = useSelector((state) => state.date.selectedDate)
   const [active, setActive] = useState(0)
-
 
   const onChangeDatePeriod = (dates) => {
     const [start, end] = dates
@@ -79,10 +78,11 @@ export const Header = ({ startPlayer, mapRef }) => {
           </ul>
           <ul className='menu__date-list'>
             <li className='menu__item-date'>
-              Сегодня: <span>{currentDate.toLocaleString("ru", optionsDate)}</span>
+              Сегодня:{' '}
+              <span>{currentDate.toLocaleString('ru', optionsDate)}</span>
             </li>
             <li className='menu__item-date'>
-              Выбранная дата:
+              Выбранная дата:{' '}
               <Calendar
                 startDate={selectedDate}
                 onChange={onChangeDateOnly}
@@ -91,8 +91,7 @@ export const Header = ({ startPlayer, mapRef }) => {
               />
             </li>
             <li className='menu__item-date'>
-              {' '}
-              Период:
+              Период:{' '}
               <Calendar
                 startDate={startDate}
                 endDate={endDate}
