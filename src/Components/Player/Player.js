@@ -13,6 +13,7 @@ import {
   faBackward,
   faForward
 } from '@fortawesome/free-solid-svg-icons'
+import { optionsDate } from '../../Constants'
 
 export const Player = ({ startPlayer, setStartPlayer }) => {
   const dispatch = useDispatch()
@@ -81,6 +82,11 @@ export const Player = ({ startPlayer, setStartPlayer }) => {
     setProgressValue(0)
   }, [geojsonData])
 
+  // скрываем плеер, если нет данных
+  if (!geojsonData) {
+    return null
+  }
+
   return (
     <div className={'player'}>
       <div className='player__container'>
@@ -130,7 +136,7 @@ export const Player = ({ startPlayer, setStartPlayer }) => {
                 // style={{left: (index+0.5)*100/geojsonData.length+'%'}}>{item.date}
                 style={{ left: index * stepPlayer + '%' }}
               >
-                <p>{item.date}</p>
+                <p>{new Date(item.date).toLocaleString('ru', optionsDate)}</p>
                 <div className={'hint__line'} />
               </div>
             ))}

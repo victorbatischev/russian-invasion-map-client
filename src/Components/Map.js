@@ -96,7 +96,7 @@ export const Map = ({ startPlayer, setStartPlayer, mapRef }) => {
         </>
       )}
       <FullscreenControl />
-      <MinimapControl position='topright' />
+      <MinimapControl position='bottomright' />
       <Player startPlayer={startPlayer} setStartPlayer={setStartPlayer} />
     </MapContainer>
   )

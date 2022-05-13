@@ -52,7 +52,15 @@ export const MinimapControl = ({ position, zoom }) => {
   const minimap = useMemo(
     () => (
       <MapContainer
-        style={{ height: 120, width: 120 }}
+        style={{
+          height: 150,
+          width: 150,
+          marginBottom: 60,
+          border: 'solid #fff 3px',
+          boxShadow: '0 1px 7px #999',
+          background: '#f8f8f9',
+          borderRadius: 8
+        }}
         center={parentMap.getCenter()}
         zoom={mapZoom}
         doubleClickZoom={false}
