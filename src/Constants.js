@@ -24,4 +24,4 @@ export const optionsDate = {
   month: 'numeric',
   day: 'numeric',
   timezone: 'UTC'
-};
+}
