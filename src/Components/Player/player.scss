@@ -1,36 +1,35 @@
-.player{
+.player {
   position: absolute;
   z-index: 999;
   bottom: 0;
   width: 87%;
-  &__container{
+  &__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
     background: transparent;
-    box-shadow: 15px 22px 39px 32px #889789;
   }
-  &__control{
+  &__control {
     display: flex;
     justify-content: space-evenly;
     flex: 0 1 20%;
   }
-  &__strip{
+  &__strip {
     position: relative;
     flex: 0 1 80%;
   }
-  &__item{
+  &__item {
     width: 37px;
   }
-  &__button{
+  &__button {
     font-size: 31px;
     outline: none;
     background: transparent;
     color: #003058;
     cursor: pointer;
     border: none;
-    &:disabled{
+    &:disabled {
       color: darkgrey;
       cursor: auto;
     }
@@ -62,14 +61,14 @@
   box-shadow: -1200px 0 0 1200px #0c0f28;
 }
 
-.hint{
+.hint {
   position: absolute;
   white-space: nowrap;
-p{
-  position: relative;
-  left: -50%;
-}
-  &__line{
+  p {
+    position: relative;
+    left: -50%;
+  }
+  &__line {
     height: 15px;
     width: 6px;
     margin: -62% 0;
