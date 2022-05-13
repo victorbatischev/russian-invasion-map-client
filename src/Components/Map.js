@@ -12,10 +12,8 @@ import { filteredDataOnDate } from '../redux/GeoJson/geoJsonSelectors'
 import { FullscreenControl } from 'react-leaflet-fullscreen'
 import 'react-leaflet-fullscreen/dist/styles.css'
 import { MinimapControl } from './MinimapControl/MinimapControl'
-import { Header } from './Header/Header'
 import { mapCenterUkraine } from '../Constants'
 import { Player } from './Player/Player'
-import { ListEvents } from './ListEvents/ListEvents'
 
 export const Map = ({ startPlayer, setStartPlayer, mapRef }) => {
   const geojsonData = useSelector(filteredDataOnDate)
@@ -37,7 +35,6 @@ export const Map = ({ startPlayer, setStartPlayer, mapRef }) => {
 
     leafletGeoJSON.eachLayer((layer) => {
       // добавляем стилизацию слоёв в GeoJSON
-      console.log(layer)
       let color = parsedGeoJSON.features[index].properties?.fill
       // в случае polyline или polygon меняем цвет
       if (layer?.options?.color && color) {

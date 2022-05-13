@@ -28,7 +28,6 @@ export const Header = ({ startPlayer, mapRef }) => {
     dispatch(setStartDate(start))
     dispatch(setEndDate(end))
     if (start && end) {
-      console.log('start', start.toLocaleString('sv-SE').substring(0, 10))
       dispatch(
         getDataGeoJson(
           start.toLocaleString('sv-SE').substring(0, 10),
