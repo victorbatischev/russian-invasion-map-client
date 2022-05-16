@@ -22,7 +22,7 @@ export const Map = ({ startPlayer, setStartPlayer, mapRef }) => {
 
   const _onFeatureGroupReady = (reactFGref) => {
     let parsedGeoJSON = geojsonData ? JSON.parse(geojsonData) : null
-    console.log('load', parsedGeoJSON)
+    //console.log('load', parsedGeoJSON)
     let leafletGeoJSON = new L.GeoJSON(parsedGeoJSON)
 
     if (!reactFGref) {
