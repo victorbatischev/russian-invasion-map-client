@@ -22,7 +22,6 @@ export const Map = ({ startPlayer, setStartPlayer, mapRef }) => {
 
   const _onFeatureGroupReady = (reactFGref) => {
     let parsedGeoJSON = geojsonData ? JSON.parse(geojsonData) : null
-    //console.log('load', parsedGeoJSON)
     let leafletGeoJSON = new L.GeoJSON(parsedGeoJSON)
 
     if (!reactFGref) {
@@ -68,7 +67,7 @@ export const Map = ({ startPlayer, setStartPlayer, mapRef }) => {
         <h1>Loading...</h1>
       ) : (
         <>
-          <LayersControl position='topleft'>
+          <LayersControl position='topleft' collapsed={false}>
             <LayersControl.BaseLayer
               checked={true}
               name='OpenStreetMap'
