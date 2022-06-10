@@ -20,6 +20,7 @@ import axios from "axios";
 
 
 export const Header = ({ startPlayer, mapRef }) => {
+
   const dispatch = useDispatch()
   const startDate = useSelector((state) => state.date.startDate)
   const endDate = useSelector((state) => state.date.endDate)
@@ -64,11 +65,9 @@ export const Header = ({ startPlayer, mapRef }) => {
     try {
       const response = await axios.get(`${process.env.REACT_APP_API_URL}/bounds/get-bounds`)
       setListBattles(response.data.data)
-      console.log(JSON.parse(response.data.data[0].bounds))
     }catch (e) {
-      setListBattles([{name: 'Данных нет'}])
+      setListBattles([{name: 'Данных нет',bounds: null}, ])
     }
-
   }, [])
 
   return (
@@ -95,13 +94,11 @@ export const Header = ({ startPlayer, mapRef }) => {
                Места сражений
                 <ul className={'menu__item-top__sub'}>
                   <li onClick={()=>{
-                     mapRef.current.fitBounds(JSON.parse(item.bounds), { padding: [50, 50] })
+                     item.bounds && mapRef.current.fitBounds(JSON.parse(item.bounds), { padding: [50, 50] })
                   }}>{item.name}</li>
-
                 </ul>
               </li>
             ))}
-
           </ul>
           <ul className='menu__date-list'>
             <li className='menu__item' onClick={()=>onChangeDateOnly(new Date())}>
