@@ -1,34 +1,35 @@
 import React, { useEffect, useState } from 'react'
 import './listEvents.scss'
-import { useSelector } from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
+import L from "leaflet"
 import { newsSelector } from '../../redux/News/newsSelectors'
+import {useMap} from "react-leaflet";
+import {getNews} from "../../redux/News/newsAction";
 
 export const ListEvents = ({ mapRef }) => {
   //const [warEvents, setWarEvents] = useState()
   const news = useSelector(newsSelector)
   const zoom = 8
+   const dispatch = useDispatch()
+   const [d, ds] = useState(null)
 
-  // useEffect(async () => {
-  //    const response = await axios.get('https://jsonplaceholder.typicode.com/photos/?_start=0&_limit=50')
-  //
-  //    setWarEvents(response.data)
-  // }, [])
-  // const onClickNews = () => {
-  //
-  // }
-  //const map = useMap()
+
   // console.log(map)
   const showEvent = (id) => {
-    const center = news[id - 1].coordinates
+    const center = news[id-1].coordinates
     mapRef.current.setView(center, zoom)
   }
+   console.log('evenr')
+  useEffect( ()=>{
+     dispatch(getNews())
+  }, [d])
 
   return (
     <div className='list-events'>
       <h3>Последние события:</h3>
       <div className='list-events__container'>
         {news &&
-          news.map((list) => (
+          news.map((list, i) => (
             <article
               className='list-events events-list'
               key={list.id}
@@ -36,17 +37,13 @@ export const ListEvents = ({ mapRef }) => {
             >
               <div className='events-list__header'>
                 <div className='events-list__icon'>
-                  <img src={list.img} alt={list.img} />
+                  <img src={list.photo} alt={list.photo} />
                 </div>
                 <div className='events-list__data'>{list.created_at}</div>
               </div>
               <div className='events-list__body'>
                 <div className='events-list__text'>
                   {list.title}
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Assumenda at culpa, dicta esse est eum impedit inventore iusto
-                  laboriosam laudantium minima mollitia numquam pariatur porro
-                  repellat, similique sit tenetur totam.
                 </div>
               </div>
             </article>

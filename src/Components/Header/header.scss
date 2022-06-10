@@ -1,3 +1,4 @@
+
 .header {
   position: fixed;
   width: 100%;
@@ -13,7 +14,6 @@
     padding: 0 15px;
   }
 }
-
 .menu {
   display: flex;
   justify-content: space-between;
@@ -28,6 +28,30 @@
     color: #060d44;
     cursor: pointer;
     padding: 5px 25px;
+    position: relative;
+    &:hover &__sub{
+      display: block;
+    }
+    &__sub{
+      position: absolute;
+      display: none;
+      background: #fff;
+      color: #051f7c;
+      list-style: none;
+      border-radius: 0 0 7px 7px;
+      padding: 5px;
+      width: 18rem;
+      line-height: 160%;
+      top: 40px;
+      left: 19px;
+      li{
+        padding: 5px;
+        &:hover{
+          transition: all 0.3s ease;
+          box-shadow: 1px 0px 5px 1px #fff;
+        }
+      }
+    }
     &_active {
       background: #051f7c;
       border-radius: 10px;
@@ -41,7 +65,7 @@
     padding: 0 10px;
     gap: 2.2rem;
   }
-  &__item-date {
+  &__item{
     color: #666666;
     font-size: 16px;
     font-weight: 600;
@@ -50,7 +74,6 @@
     gap: 3px;
     cursor: pointer;
     position: relative;
-
     span {
       font-size: 15px;
       padding: 8px;
@@ -69,5 +92,14 @@
     top: 28px;
     left: 0;
     z-index: 100;
+  }
+}
+.modal-body{
+   margin: 0 auto;
+
+  &__text{
+    font-size: 18px;
+    line-height: 145%;
+    font-family: monospace;
   }
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import './header.scss'
 import {
   currentDate,
@@ -15,13 +15,18 @@ import {
   setStartDate
 } from '../../redux/Date/dataAction'
 import { getDataGeoJson } from '../../redux/GeoJson/geoJsonAction'
+import {Modal} from "../Modal/Modal";
+import axios from "axios";
+
 
 export const Header = ({ startPlayer, mapRef }) => {
   const dispatch = useDispatch()
   const startDate = useSelector((state) => state.date.startDate)
   const endDate = useSelector((state) => state.date.endDate)
   const selectedDate = useSelector((state) => state.date.selectedDate)
-  const [active, setActive] = useState(0)
+  const [activeMenuItem, setActiveMenuItem] = useState(0)
+  const [activeModal, setActiveModal] = useState(false)
+  const [listBattles, setListBattles] = useState(null)
 
   const onChangeDatePeriod = (dates) => {
     const [start, end] = dates
@@ -44,16 +49,27 @@ export const Header = ({ startPlayer, mapRef }) => {
     switch (index) {
       case '0':
         mapRef.current.setView(mapCenterUkraine, 6)
-        setActive(+e.target.dataset.index)
+        setActiveMenuItem(+e.target.dataset.index)
         break
       case '1':
         mapRef.current.setView(mapCenterDonbass, 7)
-        setActive(+e.target.dataset.index)
+        setActiveMenuItem(+e.target.dataset.index)
         break
       default:
         return
     }
   }
+
+  useEffect(async ()=>{
+    try {
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/bounds/get-bounds`)
+      setListBattles(response.data.data)
+      console.log(JSON.parse(response.data.data[0].bounds))
+    }catch (e) {
+      setListBattles([{name: 'Данных нет'}])
+    }
+
+  }, [])
 
   return (
     <div className={'header'}>
@@ -65,7 +81,7 @@ export const Header = ({ startPlayer, mapRef }) => {
                 key={item.id}
                 data-index={index}
                 className={
-                  index === active
+                  index === activeMenuItem
                     ? 'menu__item-top menu__item-top_active'
                     : 'menu__item-top'
                 }
@@ -74,13 +90,25 @@ export const Header = ({ startPlayer, mapRef }) => {
                 {item.title}
               </li>
             ))}
+            {listBattles && listBattles.map((item, index)=>(
+              <li className={'menu__item-top menu__item-top'} key={index}>
+               Места сражений
+                <ul className={'menu__item-top__sub'}>
+                  <li onClick={()=>{
+                     mapRef.current.fitBounds(JSON.parse(item.bounds), { padding: [50, 50] })
+                  }}>{item.name}</li>
+
+                </ul>
+              </li>
+            ))}
+
           </ul>
           <ul className='menu__date-list'>
-            <li className='menu__item-date'>
+            <li className='menu__item' onClick={()=>onChangeDateOnly(new Date())}>
               Сегодня:{' '}
               <span>{currentDate.toLocaleString('ru', optionsDate)}</span>
             </li>
-            <li className='menu__item-date'>
+            <li className='menu__item'>
               Выбранная дата:{' '}
               <Calendar
                 startDate={selectedDate}
@@ -89,7 +117,7 @@ export const Header = ({ startPlayer, mapRef }) => {
                 startPlayer={startPlayer}
               />
             </li>
-            <li className='menu__item-date'>
+            <li className='menu__item'>
               Период:{' '}
               <Calendar
                 startDate={startDate}
@@ -99,8 +127,16 @@ export const Header = ({ startPlayer, mapRef }) => {
                 startPlayer={startPlayer}
               />
             </li>
+            <li className={'menu__item'} onClick={()=>setActiveModal(true)}><span className={'menu__item_icon-info'}>?</span></li>
           </ul>
         </nav>
+        <Modal setActive={setActiveModal} active={activeModal}>
+          <div className={'modal-body'}>
+            <p className={'modal-body__text'}>Внимание!</p>
+            <p className={'modal-body__text'}>Администрация сайта не несет ответственности за точность, полноту или качество предоставленной информации.</p>
+            <p className={'modal-body__text'}>По требованию Роскомнадзора ООО «Портал» приводит данные о деталях военной операции на Украине на основании информаци и российских официальных источников.</p>
+          </div>
+        </Modal>
       </div>
     </div>
   )
