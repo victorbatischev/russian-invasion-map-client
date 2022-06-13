@@ -19,7 +19,6 @@ export const Player = ({ startPlayer, setStartPlayer }) => {
   const dispatch = useDispatch()
   const geojsonData = useSelector(filteredDataOnPeriod)
   const [progressValue, setProgressValue] = useState(0)
-  // const [startPlayer, setStartPlayer] = useState(false)
 
   const stepPlayer = geojsonData
     ? +(100 / (geojsonData.length - 1)).toFixed(12)
@@ -57,21 +56,21 @@ export const Player = ({ startPlayer, setStartPlayer }) => {
     setProgressValue(100)
     dispatch(setGeoJson(geojsonData[geojsonData.length - 1]))
   }
+
   const jumpStart = () => {
     setProgressValue(0)
     dispatch(setGeoJson(geojsonData[0]))
   }
-  // console.log('progressValue = ', progressValue)
+
   useEffect(() => {
     if (Math.ceil(progressValue) >= 100) {
       setStartPlayer(false)
       return
     }
-    // console.log(progressValue, Math.ceil(progressValue), stepPlayer, Math.ceil(stepPlayer), Math.ceil(progressValue / stepPlayer + 1), startPlayer)
+
     if (startPlayer) {
       const timer = setTimeout(() => {
         const index = Math.ceil(progressValue / stepPlayer + 1)
-        // console.log('index = ', index, "Длина ползунка после = ",progressValue, "Шаг = ", stepPlayer)
         setProgressValue((prev) => prev + stepPlayer)
         dispatch(setGeoJson(geojsonData[index]))
       }, 1000)
@@ -83,11 +82,11 @@ export const Player = ({ startPlayer, setStartPlayer }) => {
     setProgressValue(0)
   }, [geojsonData])
 
-  // скрываем плеер, если нет данных
-  if (!geojsonData) {
+  // скрываем плеер, если нет данных или даннные за 1 день
+  if (!geojsonData || geojsonData.length === 1) {
     return null
   }
-
+  console.log(geojsonData)
   return (
     <div className={'player'}>
       <div className='player__container'>
