@@ -13,13 +13,16 @@ export const getDataGeoJson = (date,endDate=null) => async (dispatch) => {
   try {
     if(endDate){
       const response = await axios.get(`${process.env.REACT_APP_API_URL}/map/get-data/?startDate=${date}&date=${endDate}`)
-      dispatch(setGeoJson(response.data.data))
+      if(!response.data.hasErrors){
+        dispatch(setGeoJson(response.data.data))
+      }
+
     }else {
       const response = await axios.get(`${process.env.REACT_APP_API_URL}/map/get-data/?date=${date}`)
       dispatch(setGeoJson(response.data.data))
       dispatch(zeroingDataPeriodGeoJson())
     }
   }catch (e) {
-    dispatch(setGeoJson({json_data: null}))
+    //dispatch(setGeoJson({json_data: null}))
   }
 }
