@@ -17,10 +17,10 @@
     transform: scale(0.5);
     transition: 0.4s all;
     max-width: 1000px;
-    margin: 0 auto;
     padding: 10px 20px 35px 40px;
     background: #e7eef4;
     border-radius: 10px;
+    margin: 15px;
     &.active{
       transform: scale(1);
     }
@@ -43,16 +43,7 @@
   }
 }
 
-@media (max-width: 1111px) {
-  .modal__content{
-    height: 75vh;
-  }
-}
-@media (max-width: 854px) {
-  .modal__content{
-    height: 60vh;
-  }
-}
+
 @media (max-width: 675px) {
   .modal__content{
     height: auto;

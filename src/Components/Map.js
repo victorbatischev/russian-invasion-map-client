@@ -69,7 +69,7 @@ export const Map = ({ startPlayer, setStartPlayer, mapRef }) => {
         <>
           <LayersControl position='topleft' collapsed={false}>
             <LayersControl.BaseLayer
-              checked={true}
+              checked={false}
               name='OpenStreetMap'
               group='BaseLayers'
             >
@@ -79,7 +79,7 @@ export const Map = ({ startPlayer, setStartPlayer, mapRef }) => {
               />
             </LayersControl.BaseLayer>
             <LayersControl.BaseLayer
-              checked={false}
+              checked={true}
               name='Mapbox'
               group='BaseLayers'
             >

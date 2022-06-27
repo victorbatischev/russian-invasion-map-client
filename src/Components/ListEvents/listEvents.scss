@@ -1,8 +1,16 @@
 .list-events {
   padding: 50px 0 0 0;
+  background: #030e2ccf;
+  @media (max-width: 768px) {
+    padding: 25px 0 0 0;
+  }
 
   h3 {
-    padding: 10px 18px;
+    padding: 40px 18px;
+    color: #c0ff93;
+    @media (max-width: 1024px) {
+      padding: 10px 18px;
+    }
   }
 }
 .list-events__container {
@@ -38,12 +46,13 @@
   }
   &__data {
     font-size: 13px;
-    color: #999999;
+    color: #d5d5d5;
     font-weight: 700;
   }
   &__text {
     font-weight: 300;
     font-size: 16px;
     line-height: 140%;
+    color: #ffffff;
   }
 }

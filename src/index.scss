@@ -12,7 +12,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -48,6 +52,9 @@ code {
   flex: 0 0 80%;
   height: calc(100% - 50px);
   top: 50px;
+  @media (max-width: 1024px) {
+    flex: 0 0 100%;
+  }
 }
 
 .leaflet-touch .leaflet-control-layers-toggle {
