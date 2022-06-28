@@ -6,7 +6,7 @@ import {setEndDate, setSelectedDate, setStartDate} from "../../redux/Date/dataAc
 import {getDataGeoJson} from "../../redux/GeoJson/geoJsonAction";
 import {Modal} from "../Modal/Modal";
 
-const MenuDate = ({startPlayer, setActiveModal}) => {
+const MenuDate = ({startPlayer, setActiveModal, setBurgerActive}) => {
 
    const dispatch = useDispatch()
    const startDate = useSelector((state) => state.date.startDate)
@@ -24,7 +24,9 @@ const MenuDate = ({startPlayer, setActiveModal}) => {
              end.toLocaleString('sv-SE').substring(0, 10)
            )
          )
+         setBurgerActive(false)
       }
+
    }
 
    useEffect(()=>{
@@ -159,7 +161,10 @@ const MenuDate = ({startPlayer, setActiveModal}) => {
       }());
    },[])
 
-   const onChangeDateOnly = (dates) => dispatch(setSelectedDate(dates))
+   const onChangeDateOnly = (dates) => {
+      dispatch(setSelectedDate(dates))
+      setBurgerActive(false)
+   }
 
    return (
      <>
