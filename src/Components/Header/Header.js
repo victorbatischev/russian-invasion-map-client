@@ -8,7 +8,7 @@ import MenuDate from "./MenuDate";
 export const Header = ({startPlayer, mapRef, setActiveModal, activeModal}) => {
 
    const [burgerActive, setBurgerActive] = useState(false)
-
+   console.log('headert render')
    return (
      <header className="header">
         <div className="header__container">
@@ -22,7 +22,7 @@ export const Header = ({startPlayer, mapRef, setActiveModal, activeModal}) => {
                    onClick={() => setBurgerActive(prev => !prev)}>
                  <span/>
               </div>
-              <MenuTop mapRef={mapRef} />
+              <MenuTop mapRef={mapRef} setBurgerActive={setBurgerActive}/>
               <MenuDate startPlayer={startPlayer} setActiveModal={setActiveModal} />
               <nav className={burgerActive ? 'header__menu active' : 'header__menu'}>
               </nav>

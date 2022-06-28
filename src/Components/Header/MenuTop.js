@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {mapCenterDonbass, mapCenterUkraine, menuHeaderList} from "../../Constants";
 import axios from "axios";
 
-const MenuTop = ({mapRef}) => {
+const MenuTop = ({mapRef, setBurgerActive}) => {
 
    const [activeMenuItem, setActiveMenuItem] = useState(0)
    const [activeSubMenuItem, setActiveSubMenuItem] = useState(null)
@@ -24,11 +24,13 @@ const MenuTop = ({mapRef}) => {
             return
       }
       setActiveSubMenuItem(null)
+      setBurgerActive(false)
    }
 
    const toFocusEvent = (e, item)=>{
       item.bounds && mapRef.current.fitBounds(JSON.parse(item.bounds), { padding: [50, 50] })
       setActiveSubMenuItem(+e.target.dataset.index)
+      setBurgerActive(false)
    }
 
    useEffect(async ()=>{
