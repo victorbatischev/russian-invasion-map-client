@@ -12,7 +12,6 @@ const App = () => {
 
    return (
      <div className={'App'}>
-        {/*{mediaHeader(window1250)}*/}
         <Header
           startPlayer={startPlayer}
           mapRef={mapRef}

@@ -38,10 +38,19 @@ const MenuTop = ({mapRef}) => {
       }catch (e) {
          setListBattles([{name: 'Данных нет',bounds: null}, ])
       }
+      document.addEventListener('click', (e)=> {
+         const sub = document.querySelector('#sub-list-battles')
+         const withinBoundaries = e.composedPath().includes(sub);
+         if (!withinBoundaries ) {
+            setShowSubMenu(false)
+         }
+      })
    }, [])
 
+   console.log('menu top')
+
    return (
-     <ul className={'menu-top'}>
+     <ul className={'menu-top'} data-da='header__menu,1,1335'>
         {menuHeaderList.map((item, index) => (
           <li
             key={item.id}
@@ -59,10 +68,11 @@ const MenuTop = ({mapRef}) => {
 
           <li
             className={'menu-top__item'}
-            onClick={()=>setShowSubMenu(prev=>!prev)}
+            id={'sub-list-battles'}
+            onClick={()=>setShowSubMenu(true)}
           >
              Места сражений
-             {<ul className={'menu-top__sub-menu menu-sub'}>
+             {<ul style={{display: showSubMenu ? 'block' : 'none'}} className={'menu-top__sub-menu menu-sub'}>
                 {listBattles && listBattles.map((item, index) => (
                   <li
                     key={index}

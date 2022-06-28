@@ -1,6 +1,9 @@
 .list-events {
   padding: 50px 0 0 0;
   background: #030e2ccf;
+  @media (max-width: 874px){
+    background: #4e4e4ecf;
+  }
   @media (max-width: 768px) {
     padding: 25px 0 0 0;
   }
