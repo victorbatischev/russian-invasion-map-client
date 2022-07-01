@@ -9,7 +9,7 @@ export const Modal = ({active, setActive, children, title}) => {
         <div className={active ? "modal__content active" : "modal__content"} onClick={e=>e.stopPropagation()}>
            <div className={'modal__head'}>
               {title && <h2 className={'modal__title'}>{title}</h2>}
-              <span onClick={()=>setActive(false)}>X</span>
+              <span onClick={()=>setActive(false)}>&#10006;</span>
            </div>
            {children}
         </div>

@@ -11,6 +11,11 @@ export const Header = ({startPlayer, mapRef, setActiveModal, activeModal}) => {
    const [burgerActive, setBurgerActive] = useState(false)
    const [activeListEvents, setActiveListEvents] = useState(false)
 
+   const openListEventsModal = () => {
+      setActiveListEvents(true)
+      setBurgerActive(false)
+   }
+
    return (
      <header className="header">
         <div className="header__container">
@@ -30,7 +35,7 @@ export const Header = ({startPlayer, mapRef, setActiveModal, activeModal}) => {
               <MenuDate startPlayer={startPlayer} setActiveModal={setActiveModal} setBurgerActive={setBurgerActive}/>
               <nav className={burgerActive ? 'header__menu active' : 'header__menu'}>
                  <div className={'header__buttons-block'}>
-                    <button className={'header__button'} onClick={()=>setActiveListEvents(true)}>Последние события</button>
+                    <button className={'header__button'} onClick={()=>openListEventsModal()}>Последние события</button>
                  </div>
 
               </nav>

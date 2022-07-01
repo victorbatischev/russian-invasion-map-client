@@ -1,18 +1,22 @@
 .list-events {
   padding: 50px 0 0 0;
-  background: #030e2ccf;
-  @media (max-width: 874px){
-    background: #4e4e4ecf;
-  }
-  @media (max-width: 768px) {
-    padding: 25px 0 0 0;
+  background: #f9f9f9;
+  //@media (max-width: 874px){
+  //  background: #4e4e4ecf;
+  //}
+  @media (max-width: 874px) {
+    padding: 0;
   }
 
   h3 {
-    padding: 40px 18px;
-    color: #c0ff93;
+    padding: 40px 18px 20px 18px;
+    color: #001c30;
+    text-align: center;
     @media (max-width: 1024px) {
-      padding: 10px 18px;
+      padding: 20px 18px;
+    }
+    @media (max-width: 874px) {
+      display: none;
     }
   }
 }
@@ -28,7 +32,7 @@
   flex-direction: column;
   gap: 8px;
   padding: 15px 20px 31px 18px;
-  border-bottom: 1px solid #ececec;
+  border-bottom:1px solid #9d9999;
   cursor: pointer;
   border-left: 3px solid transparent;
   border-radius: 3px;
@@ -52,13 +56,13 @@
   }
   &__data {
     font-size: 13px;
-    color: #d5d5d5;
+    color: #343131;
     font-weight: 700;
   }
   &__text {
-    font-weight: 300;
+    font-weight: 400;
     font-size: 16px;
     line-height: 140%;
-    color: #ffffff;
+    color: #343131;
   }
 }
