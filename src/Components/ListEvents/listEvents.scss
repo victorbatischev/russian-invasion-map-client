@@ -19,6 +19,9 @@
 .list-events__container {
   height: 100%;
   overflow: auto;
+  @media (max-width: 874px) {
+    height: 60vh;
+  }
 }
 .events-list {
   display: flex;

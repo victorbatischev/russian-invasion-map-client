@@ -1,6 +1,6 @@
 import React, {useRef, useState} from 'react'
 import {Map} from './Components/Map'
-import {ListEvents} from './Components/ListEvents/ListEvents'
+import {Dsa, ListEvents} from './Components/ListEvents/ListEvents'
 import {Header} from './Components/Header/Header'
 
 const App = () => {
@@ -25,6 +25,7 @@ const App = () => {
              mapRef={mapRef}
            />
            <ListEvents mapRef={mapRef}/>
+           {/*<Dsa mapRef={mapRef}/>*/}
         </main>
      </div>
    )

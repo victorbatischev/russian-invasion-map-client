@@ -30,7 +30,7 @@ export const ListEvents = ({mapRef}) => {
    }, [])
 
    return (
-     <div className='list-events' data-da={'header__menu,last,874'}>
+     <div className='list-events' data-da={'header__menu,last,44'}>
         <h3>Последние события:</h3>
         <div className='list-events__container'>
            {news &&

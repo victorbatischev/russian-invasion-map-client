@@ -5,75 +5,89 @@
   top: 0;
   left: 0;
   transition: all 0.3s ease;
+  &.out {
+    transform: translateY(-100%);
+  }
+  &:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: #0f082c;
+    z-index: 2;
+  }
+  &__container {
+    padding: 10px 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__body {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    @media (max-width: 991px) {
+      justify-content: flex-end;
+    }
+  }
+  &__menu {
+    margin: 0 30px 0 0;
+    display: none;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  &__logo {
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 9;
+    img {
+      max-width: 100%;
+      display: block;
+    }
+  }
+  &__icon {
+    position: relative;
+    z-index: 3;
+    flex: 0 0 40px;
+  }
+  &__burger {
+    display: none;
+  }
+  &__list {
+    display: flex;
+    position: relative;
+    z-index: 2;
+    li {
+      list-style: none;
+      margin: 0 0 0 20px;
+    }
+  }
+  &__button{
+    background: #151136;
+    outline: none;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 12px 35px;
+    border-radius: 7px;
+    width: 100%;
+  }
+  &__buttons-block{
+    margin: 20px 15px;
+    display: none;
+    @media (max-width: 874px){
+      display: block;
+    }
+  }
+
 }
 
-.header.out {
-  transform: translateY(-100%);
-}
-
-.header:before {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  content: "";
-  background: #0f082c;
-  z-index: 2;
-}
-
-.header__container {
-  padding: 10px 20px;
-  margin: 0 auto;
-}
-
-.header__body {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 40px;
-}
-
-.header__menu {
-  margin: 0 30px 0 0;
-  display: none;
-  width: 100%;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.header__logo {
-  border-radius: 50%;
-  overflow: hidden;
-  z-index: 9;
-}
-
-.header__icon {
-  position: relative;
-  z-index: 3;
-  flex: 0 0 40px;
-}
-
-.header__logo img {
-  max-width: 100%;
-  display: block;
-}
-
-.header__burger {
-  display: none;
-}
-
-.header__list {
-  display: flex;
-  position: relative;
-  z-index: 2;
-}
-
-.header__list li {
-  list-style: none;
-  margin: 0 0 0 20px;
-}
 
 .menu-top {
   display: flex;
@@ -84,15 +98,15 @@
   padding: 10px;
   position: relative;
   z-index: 2;
-  @media (max-width: 904px) {
+  @media (max-width: 991px) {
     margin: 20px 0;
   }
 
   &__item {
-    font-size: 18px;
+    font-size: 16px;
     color: #f6f6f6;
     cursor: pointer;
-    padding: 5px 25px;
+    padding: 0 17px;
     position: relative;
 
     //&:last-child {
@@ -143,38 +157,41 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
   padding: 0 10px;
   position: relative;
   z-index: 2;
   gap: 2.2rem;
-  @media (max-width: 874px) {
+  @media (max-width: 640px) {
     display: flex;
     flex-wrap: wrap;
     gap: 0;
     padding: 0;
   }
-  @media (max-width: 552px) {
+  @media (max-width: 541px) {
     display: block;
   }
 
   &__item {
     color: #ffffff;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 3px;
     cursor: pointer;
     position: relative;
-    @media (max-width: 874px) {
+    @media (max-width: 640px) {
       flex: 0 1 50%;
       padding: 0 15px;
-      margin: 0 0 30px 0;
+      flex-direction: row;
+      margin: 0 0 10px 0;
     }
 
     span {
-      font-size: 15px;
-      padding: 8px;
+      font-size: 14px;
+      padding: 3px 8px;
       background: #f2f2f2;
       border-radius: 10px;
       font-family: Arial;
@@ -188,7 +205,7 @@
 }
 
 
-@media (max-width: 1335px) {
+@media (max-width: 991px) {
   .header__logo {
     flex: 0 0 40px;
   }
@@ -248,7 +265,7 @@
     left: 0;
     transition: all 0.3s ease 0s;
     background-color: #363636;
-    padding: 100px 10px 20px 10px;
+    padding: 55px 10px 20px 10px;
     overflow: auto;
     margin: 0;
   }

@@ -5,10 +5,11 @@
   width: 95%;
   &__container {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
-    padding: 10px 20px;
-    background: transparent;
+    padding: 20px 60px 10px 36px;
+    border-radius: 50px;
+    background: #ffffff75;
   }
   &__control {
     display: flex;

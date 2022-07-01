@@ -50,7 +50,7 @@ const MenuTop = ({mapRef, setBurgerActive}) => {
    }, [])
 
    return (
-     <ul className={'menu-top'} data-da='header__menu,1,1335'>
+     <ul className={'menu-top'} data-da='header__menu,0,991'>
         {menuHeaderList.map((item, index) => (
           <li
             key={item.id}
