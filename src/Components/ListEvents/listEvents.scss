@@ -21,7 +21,7 @@
   }
 }
 .list-events__container {
-  height: 100%;
+  height: calc(100% - 85px);
   overflow: auto;
   @media (max-width: 874px) {
     height: 60vh;
