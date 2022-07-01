@@ -40,12 +40,12 @@ export const Header = ({startPlayer, mapRef, setActiveModal, activeModal}) => {
 
               </nav>
            </div>
-           <Modal setActive={setActiveModal} active={activeModal}>
-              <div className={'modal-body'}>
-                 <p className={'modal-body__text'}>Внимание!</p>
-                 <p className={'modal-body__text'}>Администрация сайта не несет ответственности за точность, полноту или
+           <Modal setActive={setActiveModal} active={activeModal} title={'Информация'}>
+              <div className={'info'}>
+                 <p className={'info__text'}>Внимание!</p>
+                 <p className={'info__text'}>Администрация сайта не несет ответственности за точность, полноту или
                     качество предоставленной информации.</p>
-                 <p className={'modal-body__text'}>По требованию Роскомнадзора ООО «Портал» приводит данные о деталях
+                 <p className={'info__text'}>По требованию Роскомнадзора ООО «Портал» приводит данные о деталях
                     военной операции на Украине на основании информаци и российских официальных источников.</p>
               </div>
            </Modal>

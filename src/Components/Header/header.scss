@@ -15,7 +15,7 @@
     width: 100%;
     height: 100%;
     content: "";
-    background: #0f082c;
+    background: #00194c;
     z-index: 2;
   }
   &__container {
@@ -30,6 +30,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 40px;
     width: 100%;
     @media (max-width: 991px) {
       justify-content: flex-end;
@@ -69,7 +70,7 @@
     }
   }
   &__button{
-    background: #151136;
+    background: #0060db;
     outline: none;
     color: #fff;
     border: none;
@@ -125,16 +126,16 @@
 .menu-sub {
   position: absolute;
   display: none;
-  background: #0f082c;
+  background: #00194c;
   color: #fff;
   list-style: none;
   border-radius: 0 0 7px 7px;
   padding: 5px;
-  width: 18rem;
+  min-width: 15rem;
   line-height: 160%;
   top: 100%;
   left: 0;
-  @media (max-width: 1335px) {
+  @media (max-width: 991px) {
     position: static;
     margin: 10px 0 0 0;
   }
@@ -188,19 +189,20 @@
       flex-direction: row;
       margin: 0 0 10px 0;
     }
-
+    &_icon-info{
+      font-size: 30px;
+    }
     span {
-      font-size: 14px;
       padding: 3px 8px;
-      background: #f2f2f2;
+      background: transparent;
       border-radius: 10px;
-      font-family: Arial;
       cursor: pointer;
       display: block;
-      color: #000;
-      font-weight: 600;
+      color: #fff;
+      font-weight: 700;
       margin-left: 5px;
     }
+
   }
 }
 
@@ -264,7 +266,8 @@
     top: -100%;
     left: 0;
     transition: all 0.3s ease 0s;
-    background-color: #363636;
+    //background: radial-gradient(circle, rgba(14,32,68,1) 9%, rgba(32,50,86,1) 82%);
+    background: linear-gradient(231deg, rgba(31,49,85,1) 45%, rgba(14,32,68,1) 64%);
     padding: 55px 10px 20px 10px;
     overflow: auto;
     margin: 0;
@@ -283,5 +286,12 @@
   }
   .header__link {
     font-size: 30px;
+  }
+}
+
+.info{
+  padding: 30px;
+  &__text{
+    line-height: 166%;
   }
 }
