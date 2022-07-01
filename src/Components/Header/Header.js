@@ -44,7 +44,7 @@ export const Header = ({startPlayer, mapRef, setActiveModal, activeModal}) => {
                     военной операции на Украине на основании информаци и российских официальных источников.</p>
               </div>
            </Modal>
-           {activeListEvents && <Modal active={activeListEvents} setActive={setActiveListEvents}>
+           {activeListEvents && <Modal active={activeListEvents} setActive={setActiveListEvents} title={'Последние события'}>
               <ListEvents mapRef={mapRef}/>
            </Modal>}
         </div>
