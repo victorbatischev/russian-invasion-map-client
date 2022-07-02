@@ -5,17 +5,20 @@ import {
   LayersControl,
   MapContainer
 } from 'react-leaflet'
+import "../../node_modules/leaflet-minimap/dist/Control.MiniMap.min.css";
+import MiniMap from "leaflet-minimap";
 import { useDispatch, useSelector } from 'react-redux'
 import L from 'leaflet'
 import { getDataGeoJson } from '../redux/GeoJson/geoJsonAction'
 import { filteredDataOnDate } from '../redux/GeoJson/geoJsonSelectors'
 import { FullscreenControl } from 'react-leaflet-fullscreen'
 import 'react-leaflet-fullscreen/dist/styles.css'
-import { MinimapControl } from './MinimapControl/MinimapControl'
 import { mapCenterUkraine } from '../Constants'
 import { Player } from './Player/Player'
 
+
 export const Map = ({ startPlayer, setStartPlayer, mapRef }) => {
+
   const geojsonData = useSelector(filteredDataOnDate)
   const dispatch = useDispatch()
   const selectedDate = useSelector((state) => state.date.selectedDate)
@@ -53,6 +56,24 @@ export const Map = ({ startPlayer, setStartPlayer, mapRef }) => {
     ) // eslint-disable-next-line
   }, [selectedDate])
 
+  const minimapLayer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    minZoom: 0,
+    maxZoom: 13
+  });
+
+  mapRef.current && new L.Control.MiniMap(minimapLayer, {
+    position: "bottomright",
+    minimized: false,
+    toggleDisplay: true,
+    width: 200,
+    height: 150,
+    zoomLevelFixed: false,
+    zoomAnimation: true,
+    aimingRectOptions: { color: "#ff7800", weight: 1, clickable: false },
+    collapsedWidth: 30,
+    collapsedHeight: 30,
+  }).addTo(mapRef.current);
+
   return (
     <MapContainer
       className={'map'}
@@ -63,8 +84,8 @@ export const Map = ({ startPlayer, setStartPlayer, mapRef }) => {
         mapRef.current = mapInstance
       }}
     >
-      {1 === 4 ? (
-        <h1>Loading...</h1>
+      {!geojsonData ? (
+        <h1 className={'loading'}>Загрузка карты...</h1>
       ) : (
         <>
           <LayersControl position='topleft' collapsed={false}>
@@ -100,12 +121,11 @@ export const Map = ({ startPlayer, setStartPlayer, mapRef }) => {
             </LayersControl.BaseLayer>
           </LayersControl>
           <FeatureGroup
-            ref={(item) => _onFeatureGroupReady(item)}
-          ></FeatureGroup>
+  ref={(item) => _onFeatureGroupReady(item)}
+  />
         </>
       )}
-      <FullscreenControl />
-      <MinimapControl position='bottomright' />
+      <FullscreenControl position='bottomleft' />
       <Player startPlayer={startPlayer} setStartPlayer={setStartPlayer} />
     </MapContainer>
   )
