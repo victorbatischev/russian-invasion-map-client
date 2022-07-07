@@ -168,7 +168,7 @@ const MenuDate = ({startPlayer, setActiveModal, setBurgerActive}) => {
 
    return (
      <>
-        <ul className='menu-date' data-da='header__menu,first,640'>
+        <ul className='menu-date' data-da='header__menu,first,646'>
            <li className='menu-date__item' onClick={() => onChangeDateOnly(new Date())} >
               Сегодня:{' '}
               <span>{currentDate.toLocaleString('ru', optionsDate)}</span>

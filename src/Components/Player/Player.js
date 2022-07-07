@@ -137,7 +137,7 @@ export const Player = ({ startPlayer, setStartPlayer }) => {
                 key={index}
                 style={{ left: index * stepPlayer + '%' }}
               >
-                <p>{new Date(item.date).toLocaleString('ru', optionsDate)}</p>
+                {/*<p>{new Date(item.date).toLocaleString('ru', optionsDate)}</p>*/}
                 <div className={'hint__line'} />
               </div>
             ))}
