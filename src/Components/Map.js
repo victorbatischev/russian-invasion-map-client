@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import {
    TileLayer,
    FeatureGroup,
@@ -26,8 +26,6 @@ export const Map = ({startPlayer, setStartPlayer, mapRef}) => {
       minZoom: 0,
       maxZoom: 13
    });
-   const ma = window.matchMedia('(max-width: 684px)');
-
 
    const _onFeatureGroupReady = (reactFGref) => {
       let parsedGeoJSON = geojsonData ? JSON.parse(geojsonData) : null
@@ -65,7 +63,7 @@ export const Map = ({startPlayer, setStartPlayer, mapRef}) => {
    useEffect(() => {
       mapRef.current && new L.Control.MiniMap(minimapLayer, {
          position: "bottomright",
-         minimized: true,
+         minimized: false,
          toggleDisplay: true,
          width: 200,
          height: 150,
@@ -76,9 +74,11 @@ export const Map = ({startPlayer, setStartPlayer, mapRef}) => {
          collapsedHeight: 30,
          autoToggleDisplay: true
       }).addTo(mapRef.current);
+
    }, [mapRef.current])
 
    console.log('red')
+
    return (
      <MapContainer
        className={'map'}
@@ -126,7 +126,7 @@ export const Map = ({startPlayer, setStartPlayer, mapRef}) => {
         />
 
         <FullscreenControl position='bottomleft'/>
-        <Player startPlayer={startPlayer} setStartPlayer={setStartPlayer}/>
+        <Player startPlayer={startPlayer} setStartPlayer={setStartPlayer} />
      </MapContainer>
    )
 }
