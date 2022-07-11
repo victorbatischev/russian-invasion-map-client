@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import L from "leaflet"
 import {newsSelector} from '../../redux/News/newsSelectors'
 import {getNews} from "../../redux/News/newsAction";
+import logo from './../../Logo.jpg'
 
 export const ListEvents = ({mapRef}) => {
 
@@ -44,7 +45,7 @@ export const ListEvents = ({mapRef}) => {
              >
                 <div className='events-list__header'>
                    <div className='events-list__icon'>
-                      <img src={list.photo} alt={list.id}/>
+                      <img src={list.photo && logo} alt={list.id}/>
                    </div>
                    <div className='events-list__data'>{list.event_time}</div>
                 </div>
