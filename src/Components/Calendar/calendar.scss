@@ -2,11 +2,14 @@
   border: none;
   outline: none;
   font-size: 14px;
-  padding: 3px 8px;
+  padding: 0 8px;
   color: #fff;
   background: transparent;
   border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
   margin-left: 5px;
+  @media (max-width: 646px){
+    font-size: 18px;
+  }
 }

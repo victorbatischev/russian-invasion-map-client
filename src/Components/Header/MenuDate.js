@@ -192,7 +192,7 @@ const MenuDate = ({startPlayer, setActiveModal, setBurgerActive}) => {
                 startPlayer={startPlayer}
               />
            </li>
-           <li className={'menu-date__item'} onClick={() => setActiveModal(true)}>
+           <li data-da={'menu-top,2,646'} className={'menu-date__item menu-date__item_question'} onClick={() => setActiveModal(true)}>
               <span className={'menu-date__item_icon-info'}>?</span>
            </li>
         </ul>

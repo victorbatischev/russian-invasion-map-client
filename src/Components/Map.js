@@ -27,6 +27,8 @@ export const Map = ({startPlayer, setStartPlayer, mapRef}) => {
       maxZoom: 13
    });
 
+   const mediaScreen684 = window.matchMedia('(max-width: 684px)')
+
    const _onFeatureGroupReady = (reactFGref) => {
       let parsedGeoJSON = geojsonData ? JSON.parse(geojsonData) : null
       let leafletGeoJSON = new L.GeoJSON(parsedGeoJSON)
@@ -63,7 +65,7 @@ export const Map = ({startPlayer, setStartPlayer, mapRef}) => {
    useEffect(() => {
       mapRef.current && new L.Control.MiniMap(minimapLayer, {
          position: "bottomright",
-         minimized: false,
+         minimized: mediaScreen684.matches,
          toggleDisplay: true,
          width: 200,
          height: 150,
@@ -72,7 +74,7 @@ export const Map = ({startPlayer, setStartPlayer, mapRef}) => {
          aimingRectOptions: {color: "#ff7800", weight: 1, clickable: false},
          collapsedWidth: 30,
          collapsedHeight: 30,
-         autoToggleDisplay: true
+
       }).addTo(mapRef.current);
 
    }, [mapRef.current])
@@ -124,7 +126,6 @@ export const Map = ({startPlayer, setStartPlayer, mapRef}) => {
         <FeatureGroup
           ref={(item) => _onFeatureGroupReady(item)}
         />
-
         <FullscreenControl position='bottomleft'/>
         <Player startPlayer={startPlayer} setStartPlayer={setStartPlayer} />
      </MapContainer>
